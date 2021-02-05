@@ -22,7 +22,7 @@ def SortingLetters(s):
 # s = "bfbswefb"
 # print(SortingLetters(s))
 
-# Task 7
+#Task 7
 #Функция вычисления чисел фибоначи. Функция расчитывает следующих count чисел, кроме начальных prev и curr.
 #Kiselev G.L.
 def FiboCalc(prev, curr, count):
@@ -33,7 +33,12 @@ def FiboCalc(prev, curr, count):
 #Example of calling function
 #FiboCalc(0, 1, 10)
 
-
+#Task 9
+#Написать функцию, проверяющую у пользователя знание таблицы умножения.
+# Функция спрашивает у пользователя два целых числа, а затем спрашивает результат их перемножения.
+# Если пользователь ответил верно, функция должна напечатать слово «Верно», иначе «Ошибка. Верный ответ <число>».
+# Для ввода значений используйте встроенную функцию input, для преобразования строки к целому числу – функцию int.
+#=====================================================
 def TestForKnowledgeOfMultiplicationTable(a, b, res):
     '''
     Parameters
@@ -45,7 +50,7 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
     Returns "True" if a * b == res else "False" 
     '''
     return a * b == res
-
+#Для многократного использования функции проверки знаний таблицы умножения, создана функция повторной проверки
 def GameOfMulTable():
     while input('Y для выхода: ') != 'Y':
         firstNumber = int(input('Введите первое число: '))
@@ -59,3 +64,4 @@ def GameOfMulTable():
             print('Ошибка. Верный ответ', (firstNumber*secondNumber))
 
 GameOfMulTable()
+#=====================================================
