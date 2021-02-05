@@ -45,3 +45,12 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
     Returns "True" if a * b == res else "False" 
     '''
     return "True" if a * b == res else "False" 
+def GameOfMulTable():
+    while input('Y для выхода: ') != 'Y':
+        firstNumber = int(input('Введите первое число: '))
+        secondNumber = int(input('Введите второе число: '))
+        playerResult = int(input('Введите результат умножения этих чисел: '))
+        #Вызов функции проверки с результатом в виде строки
+        # answer = def...
+        # print(asnwer)
+
