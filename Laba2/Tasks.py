@@ -33,5 +33,12 @@ def FiboCalc(prev, curr, count):
 #Example of calling function
 #FiboCalc(0, 1, 10)
 
-
+def GameOfMulTable():
+    while input('Y для выхода: ') != 'Y':
+        firstNumber = int(input('Введите первое число: '))
+        secondNumber = int(input('Введите второе число: '))
+        playerResult = int(input('Введите результат умножения этих чисел: '))
+        #Вызов функции проверки с результатом в виде строки
+        # answer = def...
+        # print(asnwer)
 
