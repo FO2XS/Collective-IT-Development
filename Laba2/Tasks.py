@@ -22,7 +22,7 @@ def SortingLetters(s):
 # s = "bfbswefb"
 # print(SortingLetters(s))
 
-
+# Task 7
 #Функция вычисления чисел фибоначи. Функция расчитывает следующих count чисел, кроме начальных prev и curr.
 #Kiselev G.L.
 def FiboCalc(prev, curr, count):
@@ -44,13 +44,18 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
 
     Returns "True" if a * b == res else "False" 
     '''
-    return "True" if a * b == res else "False" 
+    return "True" if a * b == res else "False"
+
 def GameOfMulTable():
     while input('Y для выхода: ') != 'Y':
         firstNumber = int(input('Введите первое число: '))
         secondNumber = int(input('Введите второе число: '))
         playerResult = int(input('Введите результат умножения этих чисел: '))
         #Вызов функции проверки с результатом в виде строки
-        # answer = def...
-        # print(asnwer)
+        answer = TestForKnowledgeOfMultiplicationTable(firstNumber, secondNumber, playerResult)
+        if answer == True:
+            print('Верно')
+        else:
+            print('Ошибка. Верный ответ', (firstNumber*secondNumber))
 
+GameOfMulTable()
