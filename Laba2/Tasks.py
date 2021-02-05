@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+#Task 2
 # TODO:
 #    Написать функцию, которая сортирует
 #    все буквы в строке по возрастанию и
