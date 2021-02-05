@@ -34,4 +34,14 @@ def FiboCalc(prev, curr, count):
 #FiboCalc(0, 1, 10)
 
 
+def TestForKnowledgeOfMultiplicationTable(a, b, res):
+    '''
+    Parameters
+    ----------
+    a : first number
+    b : second number
+    res : result
 
+    Returns "True" if a * b == res else "False" 
+    '''
+    return "True" if a * b == res else "False" 
