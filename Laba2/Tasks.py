@@ -44,7 +44,7 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
 
     Returns "True" if a * b == res else "False" 
     '''
-    return "True" if a * b == res else "False"
+    return a * b == res
 
 def GameOfMulTable():
     while input('Y для выхода: ') != 'Y':
