@@ -5,12 +5,8 @@ def dist(A, B):
     '''
     евклидово расстояние между двумя точками
     '''
-    
-    r = 0
-    for i in range(len(A)):
-        r = r + (A[i] - B[i]) ** 2
-    r = np.sqrt(r)
-    return r
+
+    return np.linalg.norm(A-B)
 
 
 def class_of_each_point(X, centers):
