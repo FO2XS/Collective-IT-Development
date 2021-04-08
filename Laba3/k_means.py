@@ -6,7 +6,7 @@ def dist(A, B):
     евклидово расстояние между двумя точками
     '''
 
-    return np.linalg.norm(A-B)
+    return np.linalg.norm(A - B)
 
 
 def class_of_each_point(X, centers):
@@ -17,10 +17,8 @@ def class_of_each_point(X, centers):
     k = len(centers)
 
     # матрица расстояний от каждой точки до каждого центра
-    distances = np.zeros((m, k))
-    for i in range(m):
-        for j in range(k):
-            distances[i, j] = dist(centers[j], X[i])
+
+    distances = [[dist(j, i) for j in centers] for i in X]
 
     # поиск ближайшего центра для каждой точки
     return np.argmin(distances, axis=1)
