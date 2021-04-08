@@ -36,10 +36,7 @@ def kmeans(k, X):
     Mini = np.min(X, axis=0)
     Maxi = np.max(X, axis=0)
 
-    centers = np.empty((k, n))
-    for i in range(k):
-        for j in range(n):
-            centers[i][j] = np.random.uniform(Mini[i], Maxi[i])
+    centers = np.random.uniform(Mini, Maxi, (k,n))
 
     # приписываем каждую точку к заданному классу
     curr_iteration = class_of_each_point(X, centers)
