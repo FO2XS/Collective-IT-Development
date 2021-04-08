@@ -42,9 +42,8 @@ def kmeans(k, X):
     curr_iteration = class_of_each_point(X, centers)
 
     # цикл до тех пор, пока центры не стабилизируются
-    while True:
-        if np.all(prev_iteration == curr_iteration):
-            break
+    while np.any(prev_iteration != curr_iteration):
+
         prev_iteration = curr_iteration
 
         # вычисляем новые центры масс
