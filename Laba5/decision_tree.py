@@ -142,6 +142,14 @@ def Info(set):
     # логарифм (np.log2) от нуля равен нулю. Результат вычисления энтропии должен быть записан
     # в переменную info, которая возвращается из функции.
 
+    n = np.unique(set)
+    for i in range(n):
+        p = np.sum(set==i)/m
+        if p == 0:
+            continue
+        info += p*np.log2(p)
+
+    info*=-1
     return info
 
 
