@@ -1,11 +1,11 @@
 import numpy as np
 import math
 
-NOT_FIT = 1         # кандидатка не подходит
-FIT = 2             # кандидатка подходит
+NOT_FIT = 1  # кандидатка не подходит
+FIT = 2  # кандидатка подходит
 
-NUMERICAL = 0       # параметр числовой
-CATEGORICAL = 1     # параметр категориальный
+NUMERICAL = 0  # параметр числовой
+CATEGORICAL = 1  # параметр категориальный
 
 
 def decision_tree(X, Y, scale, level=0):
@@ -17,7 +17,9 @@ def decision_tree(X, Y, scale, level=0):
     # if <узел является листом>:
     #   print('class = %d' % Y[0])
     #   выход из функции
-
+    if len(np.unique(Y)) == 1:
+        print('class = %d' % Y[0])
+        return
     print('')
 
     n = X.shape[1]  # количество признаков
@@ -33,7 +35,7 @@ def decision_tree(X, Y, scale, level=0):
     # по каждому столбцу выборки
     for i in range(n):
 
-        if scale[i] == CATEGORICAL:   # категориальный признак
+        if scale[i] == CATEGORICAL:  # категориальный признак
 
             # TODO: вычислить информационный выигрыш от разбиения исходного множества
             # по i-му категориальному признаку. Информационный выигрыш считается по формуле:
@@ -65,10 +67,15 @@ def decision_tree(X, Y, scale, level=0):
             # Будьте внимательны при именовании переменных. Переменные n и i уже заняты (n - количество признаков, i - номер признака,
             # для которого считается информационный выигрыш). Соответственно, те n и i, что используются в формуле, вам нужно назвать по-другому.
             # 
-            # info_s = 0
+            info_s = 0
             # ... <код для вычисления info_s> ...
+            nTemp = len(np.unique(X[:, i]))
+            info_s = np.sum()
+            for j in range(nTemp):
+
             # gain.append(info - info_s)
             #
+
 
         else:  # непрерывный признак
             # сортируем столбец по возрастанию
@@ -143,13 +150,13 @@ def Info(set):
     # в переменную info, которая возвращается из функции.
 
     n = np.unique(set)
-    for i in range(n):
-        p = np.sum(set==i)/m
+    for i in n:
+        p = np.sum(set == i) / m
         if p == 0:
             continue
-        info += p*np.log2(p)
+        info += p * np.log2(p)
 
-    info*=-1
+    info *= -1
     return info
 
 
