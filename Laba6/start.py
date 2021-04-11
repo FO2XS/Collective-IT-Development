@@ -2,24 +2,22 @@ from PIL import Image
 import numpy as np
 from sklearn import linear_model
 import matplotlib.pyplot as plt
+import functions as func
+from enum import Enum
+class Color(Enum):
+    RED = 0
+    GREEN = 1
+    BLUE = 2
 
 im = Image.open('image.jpg')
 data = np.array(im.getdata()).reshape([im.height, im.width, 3])
 
-x = np.arange(0, im.width)
-#полином 5 степени
-#X = np.array([x, x ** 2.0, x ** 3.0, x ** 4.0, x ** 5.0]).transpose()
-#Полином 2 степени
-#X = np.array([x, x ** 2.0]).transpose()
-#Полином 3 степени
-#X = np.array([x, x ** 2.0, x**3.0]).transpose()
-#Полином 4 степени
-X = np.array([x, x ** 2.0, x**3.0, x**4.0]).transpose()
+X = func.polynom_matrix(4, im.width)
 lm = linear_model.LinearRegression()
 
-R = data[0, :, 0]
-G = data[0, :, 1]
-B = data[0, :, 2]
+R = data[0, :, Color.RED.value]
+G = data[0, :, Color.GREEN.value]
+B = data[0, :, Color.BLUE.value]
 
 lm.fit(X, R)
 Rpredicted = lm.predict(X)
@@ -76,5 +74,5 @@ for i in range(im.height):
         l[2] = int(B[j])
         pix[j, i] = tuple(l)
 
-im.save('readyTestFourPolynom.png')
+im.save('ready5.png')
 print('ok')
