@@ -69,11 +69,19 @@ def decision_tree(X, Y, scale, level=0):
             # 
             info_s = 0
             # ... <код для вычисления info_s> ...
+            #nTemp - это n при вычислении info_s(T)
             nTemp = len(np.unique(X[:, i]))
-            info_s = np.sum()
+            #unic - содержит уникальные значения множества T
+            unic = np.unique(X[:, i])
             for j in range(nTemp):
+                #indexes - содержит индексы элементов подмножества в исходной множестве
+                indexes = np.where(X[:, i] == unic[j])
+                #формируем подмножества Tj из исходного множества Y
+                T_j = Y[indexes]
+                temp = len(T_j) / len(X[:, i])
 
-            # gain.append(info - info_s)
+                info_s += temp*Info(T_j)
+            gain.append(info - info_s)
             #
 
 

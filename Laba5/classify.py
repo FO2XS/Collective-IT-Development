@@ -14,6 +14,20 @@ def classify(X):
     # if iq_level <= 70:
     #     answer = NOT_FIT
     # else:
-    #     ...
+    #
+
+    if iq_level <= 70:
+        answer = NOT_FIT
+    else:
+        if articles_count == 1:
+            answer = FIT
+        elif articles_count == 2:
+            if ratio <= 2.2:
+                answer = FIT
+            elif ratio > 2.2:
+                answer = NOT_FIT
+        else:
+            answer = NOT_FIT
+
 
     return answer
