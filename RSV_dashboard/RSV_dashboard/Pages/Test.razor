@@ -1,0 +1,91 @@
+﻿@page "/Test"
+
+<MudText Class="pa-2" Typo="Typo.h4">Dashboard</MudText>
+<MudGrid Class="pa-2">
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Посещаемость</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">
+                Среднее время сеанса
+            </MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">
+                Среднее время сеанса на курсах
+            </MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">
+                Среднее время сеанса на проектах
+            </MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Просмотр проекта/переход на стор. ресурс</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Обращений в поддержку</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Популярные тэги:...</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Незарегистрированных пользователей за сутки</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6" md="3">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
+            <MudText Typo="Typo.subtitle1">Кол-во незарегистрированных пользователей ушедших через 2 минуты за сутки</MudText>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12"></MudItem>
+    <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Посещаемость сайта</MudText></MudItem>
+    <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Самые популярные типы курсов</MudText></MudItem>
+    <MudItem xs="12" sm="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4" Width="100%" Height="410px">
+            <MudChart ChartType="ChartType.Bar" ChartSeries="@AVGUsers" XAxisLabels="@XAxisAVGUsers" Width="100%" Height="300px"></MudChart>
+        </MudPaper>
+    </MudItem>
+    <MudItem xs="12" sm="6">
+        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4" Width="100%">
+            <MudChart ChartType="ChartType.Pie" InputData="@data" InputLabels="@labels" Width="100%" Height="300px" />
+        </MudPaper>
+    </MudItem>
+
+
+</MudGrid>
+
+
+
+
+@code {
+    public List<ChartSeries> AVGUsers = new List<ChartSeries>()
+    {
+        new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
+    };
+    public string[] XAxisAVGUsers = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
+
+    int dataSize = 8;
+    double[] data = { 5, 20, 4, 21, 12, 13, 12, 13 };
+    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
+                        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
+                        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
+
+    
+}
+
