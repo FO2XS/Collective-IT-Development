@@ -54,12 +54,12 @@
         <col style="width: 33%;" />
     </ColGroup>
     <HeaderContent>
-        <MudTh>FAQ Name</MudTh>
-        <MudTh>When someone says...</MudTh>
-        <MudTh>The bot should reply with...</MudTh>
+        <MudTh>Название конструкции</MudTh>
+        <MudTh>Когда ему говорят</MudTh>
+        <MudTh>Оно отвечает</MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="FAQ Name">
+        <MudTd DataLabel="Название конструкции">
 
             <MudPaper Class="d-flex flex-row">
                 <MudTextField @bind-Value="@context.Name" Label="Введите название конструкции" Variant="Variant.Text"></MudTextField>
@@ -86,7 +86,7 @@
             <MudButton @onclick="() => AddSynonym(context.ID)" Variant="Variant.Filled" Color="Color.Warning">+ Синоним</MudButton>
         </MudTd>
 
-        <MudTd DataLabel="When someone says...">
+        <MudTd DataLabel="Когда ему говорят">
             @foreach (var utterance in context.StartNode.Utterances)
                     {
                 <MudPaper Class="d-flex flex-row">
@@ -96,7 +96,7 @@
                     }
             <MudButton @onclick="() => AddUtterance(context.ID)" Variant="Variant.Filled" Color="Color.Warning">+ запрос</MudButton>
         </MudTd>
-        <MudTd DataLabel="The bot should reply with...">
+        <MudTd DataLabel="Оно отвечает">
             @foreach (var response in context.ReplyNode.Responses)
                     {
                 <MudPaper Class="d-flex flex-row">

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ИТБ-230N\\Максим\\4 Сем\\reposGit\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj": {}
+    "D:\\Университет\\4 семестр\\Коллективная ID-деятельность\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj": {}
   },
   "projects": {
-    "C:\\ИТБ-230N\\Максим\\4 Сем\\reposGit\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj": {
+    "D:\\Университет\\4 семестр\\Коллективная ID-деятельность\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ИТБ-230N\\Максим\\4 Сем\\reposGit\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj",
+        "projectUniqueName": "D:\\Университет\\4 семестр\\Коллективная ID-деятельность\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj",
         "projectName": "RSV_dashboard",
-        "projectPath": "C:\\ИТБ-230N\\Максим\\4 Сем\\reposGit\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj",
-        "packagesPath": "C:\\Users\\Qwerty\\.nuget\\packages\\",
-        "outputPath": "C:\\ИТБ-230N\\Максим\\4 Сем\\reposGit\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\obj\\",
+        "projectPath": "D:\\Университет\\4 семестр\\Коллективная ID-деятельность\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\RSV_dashboard.csproj",
+        "packagesPath": "C:\\Users\\FOXXS\\.nuget\\packages\\",
+        "outputPath": "D:\\Университет\\4 семестр\\Коллективная ID-деятельность\\Collective-IT-Development\\RSV_dashboard\\RSV_dashboard\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Qwerty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FOXXS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +43,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[5.0.7, )"
@@ -63,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
