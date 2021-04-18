@@ -98,21 +98,19 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Pages\Test.razor"
+#line 338 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Pages\Test.razor"
        
-    public List<ChartSeries> AVGUsers = new List<ChartSeries>()
-    {
-        new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
-    };
+    public List<ChartSeries> AVGUsers = new List<ChartSeries>() {
+            new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
+        };
     public string[] XAxisAVGUsers = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
 
     int dataSize = 8;
     double[] data = { 5, 20, 4, 21, 12, 13, 12, 13 };
-    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
-                        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
-                        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
 
-    
+    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
+        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
+        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
 
 #line default
 #line hidden

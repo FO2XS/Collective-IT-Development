@@ -1,91 +1,351 @@
 ﻿@page "/Test"
 
-<MudText Class="pa-2" Typo="Typo.h4">Dashboard</MudText>
-<MudGrid Class="pa-2">
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Посещаемость</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">
-                Среднее время сеанса
-            </MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">
-                Среднее время сеанса на курсах
-            </MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">
-                Среднее время сеанса на проектах
-            </MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Просмотр проекта/переход на стор. ресурс</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Обращений в поддержку</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Популярные тэги:...</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Незарегистрированных пользователей за сутки</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6" md="3">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full py-12">
-            <MudText Typo="Typo.subtitle1">Кол-во незарегистрированных пользователей ушедших через 2 минуты за сутки</MudText>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12"></MudItem>
-    <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Посещаемость сайта</MudText></MudItem>
-    <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Самые популярные типы курсов</MudText></MudItem>
-    <MudItem xs="12" sm="6">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4" Width="100%" Height="410px">
-            <MudChart ChartType="ChartType.Bar" ChartSeries="@AVGUsers" XAxisLabels="@XAxisAVGUsers" Width="100%" Height="300px"></MudChart>
-        </MudPaper>
-    </MudItem>
-    <MudItem xs="12" sm="6">
-        <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4" Width="100%">
-            <MudChart ChartType="ChartType.Pie" InputData="@data" InputLabels="@labels" Width="100%" Height="300px" />
-        </MudPaper>
-    </MudItem>
+<div class="mud-layout mud-drawer-open-responsive-md-left mud-drawer-clipped-always">
+    <div>
+        <!--!--><!--!-->
+        <!--!-->
+        <!--!-->
+        <div class="mud-container mud-container-maxwidth-false mt-4">
+            <MudGrid Style="margin-top: 20px; margin-bottom:20px; padding-right:20px;">
+                <MudItem xs="12" sm="6">
+                    <MudText Class="pa-2" Typo="Typo.h4">Dashboard</MudText>
+                </MudItem>
+                <MudItem Style="text-align:right;" xs="12" sm="6">
+                    <MudButton Variant="Variant.Outlined">
+                        <MudIcon Icon="@Icons.Custom.FileFormats.FileCode" Size="Size.Large" Color="Color.Warning"></MudIcon>
+                        <MudText Align="Align.Center" Typo="Typo.subtitle1">XML файл статистики сайта</MudText>
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
 
+            <div class="mud-grid mud-grid-spacing-xs-3 mud-grid-justify-xs-flex-start">
+                <!--!-->
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height: auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Посещаемость</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">3 380 000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height: auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Среднее время сеанса <br>авторизованного пользователя</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">10 мин.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height: auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Среднее время сеанса<br>нового пользователя</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">3 мин.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height:auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Среднее время сеанса на курсах</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">26 мин.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height:auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+                                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Среднее время сеанса на проектах</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">1 ч. 10 мин.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height:auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Просмотр проекта/переход на стор. ресурс</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">187 тыс.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height:auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M9,11.24V7.5C9,6.12,10.12,5,11.5,5S14,6.12,14,7.5v3.74c1.21-0.81,2-2.18,2-3.74C16,5.01,13.99,3,11.5,3S7,5.01,7,7.5 C7,9.06,7.79,10.43,9,11.24z M18.84,15.87l-4.54-2.26c-0.17-0.07-0.35-0.11-0.54-0.11H13v-6C13,6.67,12.33,6,11.5,6 S10,6.67,10,7.5v10.74c-3.6-0.76-3.54-0.75-3.67-0.75c-0.31,0-0.59,0.13-0.79,0.33l-0.79,0.8l4.94,4.94 C9.96,23.83,10.34,24,10.75,24h6.79c0.75,0,1.33-0.55,1.44-1.28l0.75-5.27c0.01-0.07,0.02-0.14,0.02-0.2 C19.75,16.63,19.37,16.09,18.84,15.87z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Обращений в поддержку</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">2 400 раз</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height: auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
 
-</MudGrid>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Незарегистрированных пользователей за сутки</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">1 230</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="mud-grid-item mud-grid-item-xs-12 mud-grid-item-sm-6 mud-grid-item-md-3">
+                    <!--!-->
+                    <div class="mud-paper mud-elevation-25 d-flex flex-row pt-6 pb-4" style="height: auto;">
+                        <!--!-->
+                        <svg class="mud-icon-root mud-svg-icon mud-primary-text mud-icon-size-medium mx-4" style="width:54px; height:54px;" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <!--!-->
+                            <g>
+                                <rect fill="none" height="24" width="24"></rect>
+                            </g>
+                            <g>
+                                <g></g>
+                                <path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M9,12c-0.55,0-1-0.45-1-1V8 c0-0.55,0.45-1,1-1s1,0.45,1,1v3C10,11.55,9.55,12,9,12z M14,18h-4v-2c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2V18z M16,11 c0,0.55-0.45,1-1,1c-0.55,0-1-0.45-1-1V8c0-0.55,0.45-1,1-1c0.55,0,1,0.45,1,1V11z"></path>
+                            </g>
+                        </svg>
+                        <!--!-->
+                        <div>
+                            <!--!-->
+                            <h6 class="mud-typography mud-typography-subtitle1 mud-inherit-text mud-text-secondary mb-n1">Кол-во незарегистрированных пользователей<br />ушедших через 2 минуты за сутки</h6>
+                            <!--!-->
+                            <!--!-->
+                            <h5 class="mud-typography mud-typography-h5 mud-inherit-text">18 200</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <MudGrid Class="pa-2">
+                <MudItem xs="12"></MudItem>
+                <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Посещаемость сайта</MudText></MudItem>
+                <MudItem xs="12" sm="6"><MudText Align="Align.Center" Typo="Typo.h4">Самые популярные типы курсов</MudText></MudItem>
+                <MudItem xs="12" sm="6">
+                    <div class="mud-paper mud-elevation-1 d-flex align-center justify-center mud-width-full pa-4" style="height:410px;width:100%;">
+                        <!--!--><!--!-->
+                        <div class="mud-chart mud-chart-legend-bottom" style="width: 80%">
+                            <!--!-->
+                            <svg class="mud-chart-line" width="100%" height="80%" viewBox="0 0 650 350">
+                                <g class="mud-charts-grid">
+                                    <g class="mud-charts-gridlines-yaxis">
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 325 L 620 325"></path>
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 265 L 620 265"></path>
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 205 L 620 205"></path>
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 145 L 620 145"></path>
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 85 L 620 85"></path>
+                                        <path stroke="#e0e0e0" stroke-width="0.3" d="M 30 25 L 620 25"></path>
+                                    </g>
+                                </g>
+                                <!--!-->
+                                <g class="mud-charts-yaxis">
+                                    <!--!-->
+                                    <text x="20" y="330" font-size="12px" text-anchor="end" dominant-baseline="auto">0</text>
+                                    <!--!-->
+                                    <text x="20" y="270" font-size="12px" text-anchor="end" dominant-baseline="auto">20</text>
+                                    <!--!-->
+                                    <text x="20" y="210" font-size="12px" text-anchor="end" dominant-baseline="auto">40</text>
+                                    <!--!-->
+                                    <text x="20" y="150" font-size="12px" text-anchor="end" dominant-baseline="auto">60</text>
+                                    <!--!-->
+                                    <text x="20" y="90" font-size="12px" text-anchor="end" dominant-baseline="auto">80</text>
+                                    <!--!-->
+                                    <text x="20" y="30" font-size="12px" text-anchor="end" dominant-baseline="auto">100</text>
+                                </g>
+                                <!--!-->
+                                <g class="mud-charts-xaxis">
+                                    <!--!-->
+                                    <text x="30" y="348" font-size="12px" text-anchor="middle">Jan</text>
+                                    <!--!-->
+                                    <text x="103.75" y="348" font-size="12px" text-anchor="middle">Feb</text>
+                                    <!--!-->
+                                    <text x="177.5" y="348" font-size="12px" text-anchor="middle">Mar</text>
+                                    <!--!-->
+                                    <text x="251.25" y="348" font-size="12px" text-anchor="middle">Apr</text>
+                                    <!--!-->
+                                    <text x="325" y="348" font-size="12px" text-anchor="middle">May</text>
+                                    <!--!-->
+                                    <text x="398.75" y="348" font-size="12px" text-anchor="middle">Jun</text>
+                                    <!--!-->
+                                    <text x="472.5" y="348" font-size="12px" text-anchor="middle">Jul</text>
+                                    <!--!-->
+                                    <text x="546.25" y="348" font-size="12px" text-anchor="middle">Aug</text>
+                                    <!--!-->
+                                    <text x="620" y="348" font-size="12px" text-anchor="middle">Sep</text>
+                                </g>
+                                <!--!-->
+                                <g class="mud-charts-bar-series">
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 30 325 L 30 205"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 103.75 325 L 103.75 265"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 177.5 325 L 177.5 250"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 251.25 325 L 251.25 244"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 325 325 L 325 187"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 398.75 325 L 398.75 145"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 472.5 325 L 472.5 181"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 546.25 325 L 546.25 85"></path>
+                                    <path fill="#2979FF" stroke="#2979FF" stroke-width="8" d="M 620 325 L 620 280"></path>
+                                </g>
+                            </svg>
+                            <!--!-->
+                            <!--!-->
+                            <div class="mud-chart-legend">
+                                <div class="mud-chart-legend-item">
+                                    <span class="mud-chart-legend-marker" style="background-color:#2979FF"></span><!--!-->
+                                    <!--!-->
+                                    <p class="mud-typography mud-typography-body2 mud-inherit-text mud-typography-display-inline">Средняя посещаемость</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </MudItem>
+                <MudItem xs="12" sm="6">
+                    <MudPaper Class="d-flex align-center justify-center mud-width-full pa-4" Width="100%">
+                        <MudChart ChartType="ChartType.Pie" InputData="@data" InputLabels="@labels" Width="100%" Height="300px" />
+                    </MudPaper>
+                </MudItem>
+            </MudGrid>
 
-
+        </div>
+    </div>
+</div>
 
 @code {
-    public List<ChartSeries> AVGUsers = new List<ChartSeries>()
-    {
-        new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
-    };
+    public List<ChartSeries> AVGUsers = new List<ChartSeries>() {
+            new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
+        };
     public string[] XAxisAVGUsers = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
 
     int dataSize = 8;
     double[] data = { 5, 20, 4, 21, 12, 13, 12, 13 };
-    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
-                        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
-                        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
 
-    
+    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
+        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
+        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
 }
 
