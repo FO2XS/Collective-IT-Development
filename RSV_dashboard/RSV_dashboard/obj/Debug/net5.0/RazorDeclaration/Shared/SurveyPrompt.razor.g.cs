@@ -13,77 +13,77 @@ namespace RSV_dashboard.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 1 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 2 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 3 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 4 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 5 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 6 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 7 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 8 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 9 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using RSV_dashboard;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 10 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using RSV_dashboard.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Develop\RSV_dashboard\rsv_dashboard\_Imports.razor"
+#line 11 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\_Imports.razor"
 using MudBlazor;
 
 #line default
@@ -97,7 +97,7 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "D:\Develop\RSV_dashboard\rsv_dashboard\Shared\SurveyPrompt.razor"
+#line 12 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Shared\SurveyPrompt.razor"
        
     // Demonstrates how a parent component can supply parameters
     [Parameter]

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace RSV_dashboard.Pages
+namespace RSV_dashboard.Bot.Components.Modals
 {
     #line hidden
     using System;
@@ -89,8 +89,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Test")]
-    public partial class Test : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class SaveComplete : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,21 +97,12 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Pages\Test.razor"
+#line 13 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Bot\Components\Modals\SaveComplete.razor"
        
-    public List<ChartSeries> AVGUsers = new List<ChartSeries>()
+    private void Close()
     {
-        new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
-    };
-    public string[] XAxisAVGUsers = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
-
-    int dataSize = 8;
-    double[] data = { 5, 20, 4, 21, 12, 13, 12, 13 };
-    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
-                        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
-                        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
-
-    
+        //ModalService.Cancel();
+    }
 
 #line default
 #line hidden

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace RSV_dashboard.Pages
+namespace RSV_dashboard.Bot.Components
 {
     #line hidden
     using System;
@@ -89,8 +89,7 @@ using MudBlazor;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Test")]
-    public partial class Test : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TestChat : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,21 +97,27 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 76 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Pages\Test.razor"
+#line 29 "D:\Университет\4 семестр\Коллективная ID-деятельность\Collective-IT-Development\RSV_dashboard\RSV_dashboard\Bot\Components\TestChat.razor"
        
-    public List<ChartSeries> AVGUsers = new List<ChartSeries>()
+    string userStatement { get; set; }
+    string inputString { get; set; }
+    string responseLabel { get; set; }
+    string aiResult { get; set; }
+    Models.AIOutput mlResult { get; set; }
+    Models.Tasks.Conversation testResponse { get; set; }
+    [Parameter]
+    public Models.BotConfig botConfig { get; set; }
+    public void ScoreData()
     {
-        new ChartSeries() { Name = "Средняя посещаемость", Data = new double[] { 40, 20, 25, 27, 46, 60, 48, 80, 15 } }
-    };
-    public string[] XAxisAVGUsers = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep" };
+        mlResult = Services.Platform.AIService.Predict(botConfig, inputString);
+        testResponse = botConfig.FindFAQResponse(mlResult.Prediction);
+        userStatement = $"Ваш запрос: {inputString}";
+        responseLabel = $"Ответ бота: {testResponse.ReplyNode.Responses.FirstOrDefault().Statement}";
+        aiResult = $"Прогноз: {mlResult.Prediction}, точное совпадение: {mlResult.ExactMatch}, достоверность: {string.Join(", ", mlResult.Score)}";
 
-    int dataSize = 8;
-    double[] data = { 5, 20, 4, 21, 12, 13, 12, 13 };
-    string[] labels = { "Бизнес", "Управление", "Реализация проектов", "Социология", "Саморазвитие", "Планирование",
-                        "Коммуникация", "Карьера", "Логика", "Развитие компетенций", "Финансы", "Actinium", "Protactinium",
-                        "Neptunium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Mudblaznium" };
+    }
 
-    
+
 
 #line default
 #line hidden
