@@ -1,0 +1,49 @@
+﻿
+    <MudText Typo="Typo.h6">Можно ввести фразы, соответствующие или похожие на настроенные с помощью редактора. Платформа попытается точно соответствовать или вернуться к ИИ для распознавания намерений.</MudText>
+    <MudPaper Class="d-flex flex-row">
+        <MudTextField @bind-Value="inputString" Variant="Variant.Outlined" Label="Введите запрос"></MudTextField>
+        <MudButton @onclick ="ScoreData" Size="Size.Small">Отправить</MudButton>
+    </MudPaper>
+
+
+    <br />
+    
+   @if (!string.IsNullOrEmpty(userStatement))
+    {
+        <hr />
+        <h3>@userStatement</h3>
+        <h3>@responseLabel</h3>
+        <small>Statements: @string.Join(", ", testResponse.StartNode.Utterances.Select(f => f.Statement))</small>
+        <small>Responses: @string.Join(", ", testResponse.ReplyNode.Responses.Select(f => f.Statement))</small>
+        <hr />
+
+        <h4>@aiResult</h4>
+        <div>Exact Match Found: @mlResult.ExactMatch</div>
+        <hr />
+    }
+
+
+
+
+
+@code {
+    string userStatement { get; set; }
+    string inputString { get; set; }
+    string responseLabel { get; set; }
+    string aiResult { get; set; }
+    Models.AIOutput mlResult { get; set; }
+    Models.Tasks.Conversation testResponse { get; set; }
+    [Parameter]
+    public Models.BotConfig botConfig { get; set; }
+    public void ScoreData()
+    {
+        mlResult = Services.Platform.AIService.Predict(botConfig, inputString);
+        testResponse = botConfig.FindFAQResponse(mlResult.Prediction);
+        userStatement = $"Ваш запрос: {inputString}";
+        responseLabel = $"Ответ бота: {testResponse.ReplyNode.Responses.FirstOrDefault().Statement}";
+        aiResult = $"Прогноз: {mlResult.Prediction}, точное совпадение: {mlResult.ExactMatch}, достоверность: {string.Join(", ", mlResult.Score)}";
+
+    }
+
+
+}
