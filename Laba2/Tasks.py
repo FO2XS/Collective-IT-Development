@@ -16,8 +16,7 @@ import matplotlib.pyplot as plt
 def SortingLetters(s):
     arrayS = list(s)
     arrayS = sorted(arrayS)
-    s = ''.join(arrayS)
-    return s
+    ''.join(sorted(list(s)))
 
 # s = "bfbswefb"
 # print(SortingLetters(s))
@@ -25,13 +24,13 @@ def SortingLetters(s):
 #Task 7
 #Функция вычисления чисел фибоначи. Функция расчитывает следующих count чисел, кроме начальных prev и curr.
 #Kiselev G.L.
-def FiboCalc(prev, curr, count):
-    print(prev)
-    if count < 0: return 0
-    count = count-1
-    FiboCalc(curr, prev+curr, count)
+def FiboCalc(n):
+    if type(n) != int:
+        raise Exception ("Нельзя привести n к типу int")
+    if n in (1, 2):
+        return 1
+    return FiboCalc(n - 1) + FiboCalc(n - 2)
 #Example of calling function
-#FiboCalc(0, 1, 10)
 
 #Task 9
 #Написать функцию, проверяющую у пользователя знание таблицы умножения.
@@ -52,6 +51,7 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
     return a * b == res
 #Для многократного использования функции проверки знаний таблицы умножения, создана функция повторной проверки
 def GameOfMulTable():
+    print('число фибоначи для 10:', FiboCalc(10))
     while input('Y для выхода: ') != 'Y':
         firstNumber = int(input('Введите первое число: '))
         secondNumber = int(input('Введите второе число: '))
@@ -62,6 +62,5 @@ def GameOfMulTable():
             print('Верно')
         else:
             print('Ошибка. Верный ответ', (firstNumber*secondNumber))
-
 GameOfMulTable()
 #=====================================================
