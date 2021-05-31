@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 def SortingLetters(s):
     arrayS = list(s)
     arrayS = sorted(arrayS)
-    ''.join(sorted(list(s)))
+    return ''.join(sorted(list(s)))
 
 # s = "bfbswefb"
 # print(SortingLetters(s))
