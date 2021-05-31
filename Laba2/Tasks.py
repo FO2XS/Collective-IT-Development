@@ -62,5 +62,5 @@ def GameOfMulTable():
             print('Верно')
         else:
             print('Ошибка. Верный ответ', (firstNumber*secondNumber))
-GameOfMulTable()
+GameOfMulTable() 
 #=====================================================
