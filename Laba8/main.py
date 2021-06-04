@@ -1,30 +1,28 @@
 import re
 
 
-print();
-print();
+print()
+print()
 # 1 task
 str = "#03B63A, #FFF, #000, #03B63A"
 Sstr = "ABCDEF, 123, #GHIJKL"
 
-result = re.findall(r'#[0-9A-F]{3,6}', str)
-print(result)
+print(re.findall(r'#[0-9A-F]{3,6}', str))
 
 
-print();
-print();
+print()
+print()
 # 5 task
 str = "http://ya.ru/index.html, https://wikipedia.org/"
 Sstr = "ftp://some.server/, https://ru.wikipedia.org/"
 
-result = re.findall(r'http(s:|:)//([a-z]*.[a-z]*)/', str)
+result = re.findall(r'http(s:|:)//([a-z|0-9]*.[a-z|0-9]*)/', str)
 
 for i in result:
-    print(i[1]);
+    print(i[1])
 
-
-print();
-print();
+print()
+print()
 # 10 task
 str = "test.png, test.jpeg, test.jpg, test.gif"
 Sstr = "test.php, test.exe, ~!@$%.png, <?php test.png ?>"
