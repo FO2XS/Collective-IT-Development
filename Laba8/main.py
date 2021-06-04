@@ -16,7 +16,7 @@ print()
 str = "http://ya.ru/index.html, https://wikipedia.org/"
 Sstr = "ftp://some.server/, https://ru.wikipedia.org/"
 
-result = re.findall(r'http(s:|:)//([a-z|0-9]*.[a-z|0-9]*)/', str)
+result = re.findall(r'http(s:|:)//([a-z|0-9]*.[a-z]*)/', str)
 
 for i in result:
     print(i[1])
