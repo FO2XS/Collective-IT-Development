@@ -25,7 +25,7 @@ class Drawer(QWidget):
         self.myPenWidth = newWidth
 
     def setPatch(self):
-        self.patch = QFileDialog.getOpenFileNames(self, "C:\\Users", "C:\\Users", "'PNG Image (*.png)'")[0][0]
+        self.patch = QFileDialog.getOpenFileNames(self,"Открытие файла", "C:\\", "'PNG Image (*.png)'")[0][0]
         self.loadImage()
 
     def clearImage(self):

@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from enum import Enum
 
 app = QApplication(sys.argv)
 w = QWidget()
@@ -17,7 +18,7 @@ var2.setMaximumWidth(60);
 result = QTextEdit();
 result.setMaximumHeight(25);
 
-class Operation:
+class Operation(Enum):
     plus = 1
     minus = 2
     mul = 3
@@ -31,15 +32,15 @@ def Calculator(i):
 
         result1 = 1.3
 
-        if i == 1:
+        if Operation.plus == i:
             result1 = a + b;
-        if i == 2:
+        if Operation.minus == i:
             result1 = a - b;
-        if i == 3:
+        if Operation.mul == i:
             result1 = a * b;
-        if i == 4:
+        if Operation.div == i:
             result1 = a / b;
-        if i == 5:
+        if Operation.power == i:
             result1 = a**b;
 
         result.setText(str(result1))
