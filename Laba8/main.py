@@ -7,7 +7,7 @@ print()
 str = "#03B63A, #FFF, #000, #03B63A"
 Sstr = "ABCDEF, 123, #GHIJKL"
 
-print(re.findall(r'#[0-9A-F]{3,6}', str))
+print(re.findall(r'#[0-9A-z]{3,6}', str))
 
 
 print()
