@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://api.stiven-king.com/storage.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>localStorage</title>
+    <meta name="robots" content="noindex,nofollow,noarchive">
+</head>
+<body>
+<script>
+	addEventListener('message', e => {
+		try {
+			if ('localStorage.getItem' in e.data) {
+				readAndPost(e.data['localStorage.getItem']);
+			}
+			if ('localStorage.setItem' in e.data) {
+				const key = e.data['localStorage.setItem'];
+				if (key === 'player.totalTime') {
+					const t = +e.data.value;
+					const stored = +localStorage.getItem(key) || 0;
+					if (t > stored) localStorage.setItem(key, e.data.value);
+					return;
+				}
+				localStorage.setItem(key, e.data.value);
+			}
+		} catch (e) {
+		}
+	});
+
+	readAndPost('player.totalTime');
+
+	function readAndPost(key) {
+		const value = localStorage.getItem(key);
+		parent.postMessage({ key, value }, '*');
+	}
+</script>
+
+</body></html>
