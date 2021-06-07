@@ -48,8 +48,7 @@ def Calculator(i):
         result.setText("Некорректные данные!")
 
 
-
-def main2():
+def main():
 
     text1 = QLabel("Значение 1")
     text2 = QLabel("Значение 2")
@@ -103,5 +102,15 @@ def main2():
     w.show()
     sys.exit(app.exec_())
 
+if __name__ == '__main__':
+    main()
 
-main2()
+
+
+
+
+
+
+
+
+
