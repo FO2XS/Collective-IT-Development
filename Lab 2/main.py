@@ -13,8 +13,6 @@ import matplotlib.pyplot as plt
 #    строки в массив используй-те конструкцию:
 #    ‘’.join(a), где a – это массив.
 def SortingLetters(s):
-    arrayS = list(s)
-    arrayS = sorted(arrayS)
     return ''.join(sorted(list(s)))
 
 # s = "bfbswefb"
@@ -52,14 +50,18 @@ def TestForKnowledgeOfMultiplicationTable(a, b, res):
 def GameOfMulTable():
     print('число фибоначи для 10:', FiboCalc(10))
     while input('Y для выхода: ') != 'Y':
-        firstNumber = int(input('Введите первое число: '))
-        secondNumber = int(input('Введите второе число: '))
-        playerResult = int(input('Введите результат умножения этих чисел: '))
-        #Вызов функции проверки с результатом в виде строки
-        answer = TestForKnowledgeOfMultiplicationTable(firstNumber, secondNumber, playerResult)
-        if answer == True:
-            print('Верно')
-        else:
-            print('Ошибка. Верный ответ', (firstNumber*secondNumber))
+        try:
+            firstNumber = int(input('Введите первое число: '))
+            secondNumber = int(input('Введите второе число: '))
+            playerResult = int(input('Введите результат умножения этих чисел: '))
+            #Вызов функции проверки с результатом в виде строки
+            answer = TestForKnowledgeOfMultiplicationTable(firstNumber, secondNumber, playerResult)
+            if answer == True:
+                print('Верно')
+            else:
+                print('Ошибка. Верный ответ', (firstNumber*secondNumber))
+        except(Exception):
+            print("Вы ввели некорректные данные! Попробуйте еще раз:")
+            print()
 GameOfMulTable()
 #====================================================
