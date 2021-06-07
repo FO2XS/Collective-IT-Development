@@ -119,6 +119,8 @@ venv.bak/
 # mkdocs documentation
 /site
 
+Laba 4/.idea/
+
 # mypy
 .mypy_cache/
 .dmypy.json
