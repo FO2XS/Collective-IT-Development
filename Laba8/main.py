@@ -1,5 +1,6 @@
 import re
 
+
 print()
 print()
 # 1 task
@@ -15,7 +16,7 @@ print()
 str = "http://ya.ru/index.html, https://wikipedia.org/"
 Sstr = "ftp://some.server/, https://ru.wikipedia.org/"
 
-result = re.findall(r'http(s:|:)//([a-z|0-9]+\.[a-z]+)/', str)
+result = re.findall(r'http(s:|:)//([\w|0-9]+\.[a-z]+)/', str)
 
 for i in result:
     print(i[1])
@@ -23,10 +24,10 @@ for i in result:
 print()
 print()
 # 10 task
-str = "__4124.png, test.jpeg, test.jpg, test.gif"
+str = "test.png, test.jpeg, Test.jpg, test.gif"
 Sstr = "test.php, test.exe, ~!@$%.png, <?php test.png ?>"
 
 for i in str.split(", "):
-    result = re.findall(r'^([a-z0-9-_]+\.(png|jpeg|gif|jpg))', i)
+    result = re.findall(r'^([\w0-9-_]+\.(png|jpeg|gif|jpg))', i)
     if len(result) != 0:
         print(result[0][0])
